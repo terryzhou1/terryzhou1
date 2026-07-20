@@ -1,0 +1,203 @@
+/* ---------------------------------------------------------
+   Minimal academic personal site
+   Serif, narrow column, quiet hairline rules — no chrome.
+--------------------------------------------------------- */
+
+:root {
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --paper: #ffffff;
+  --line: #dddddd;
+  --link: #2a5db0;
+  --link-visited: #5a3a9c;
+  --max-width: 680px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+/* ---------- Header / nav ---------- */
+
+header.site-header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 20px 18px;
+}
+
+.site-title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0 0 10px;
+}
+
+.site-title a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav.site-nav {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+}
+
+nav.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav.site-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+nav.site-nav a:hover,
+nav.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+/* ---------- Intro / bio block ---------- */
+
+.intro {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  margin: 8px 0 36px;
+}
+
+.intro-text {
+  flex: 1 1 auto;
+}
+
+.intro-text p {
+  margin: 0 0 14px;
+}
+
+.byline {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  margin: 0 0 16px;
+}
+
+.byline a {
+  margin-right: 2px;
+}
+
+.byline .sep {
+  color: var(--line);
+  margin: 0 8px;
+}
+
+.headshot {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  object-fit: cover;
+  background: #eee;
+}
+
+/* ---------- Page heading ---------- */
+
+h1.page-title {
+  font-size: 1.5rem;
+  margin: 8px 0 24px;
+}
+
+/* ---------- Research entries ---------- */
+
+.pub {
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+
+.pub:first-of-type {
+  border-top: none;
+}
+
+.pub h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.pub .venue {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.pub .links a {
+  font-size: 0.92rem;
+  margin-right: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+/* ---------- Footer ---------- */
+
+footer.site-footer {
+  max-width: var(--max-width);
+  margin: 40px auto 0;
+  padding: 20px 20px 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+  .intro {
+    flex-direction: column-reverse;
+  }
+  .headshot {
+    width: 120px;
+    height: 120px;
+  }
+  nav.site-nav ul {
+    gap: 14px;
+  }
+}
